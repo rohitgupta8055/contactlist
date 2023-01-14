@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <h1>Contact List</h1>
+    <div>
+        <br>
+        
+    <ul>
+        <%for(let i of contact_list){%>
+            <li>
+                
+                <p><%=i.name%> &nbsp;&nbsp;&nbsp;-> <%=i.number%></p>
+            
+                 
+            </li>
+           
+            <%}%>
+    </ul>
+    
+        <form action="/create-contact" method="POST">
+            <input type="text" name="user_name" placeholder="Your Name" required><br><br>
+            <input type="number" name="user_number" placeholder="Number" required><br><br>
+            <button type="submit">Add Contacts</button>
+        </form>
+        <br>
+    </div>
+</body>
+</html>
+

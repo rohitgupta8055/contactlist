@@ -61,6 +61,21 @@ app.post('/create-contact',function(req,res){
    
 })
 
+//delete contact
+app.get('/delete-contact',function(req,res){
+    console.log(req.query);
+    let phone=req.query.number;
+
+    let contactIndex=contactList.findIndex(it=> it.number_ejs==phone);
+
+    if(contactIndex!=-1)
+    contactList.splice(contactIndex,1);
+
+    return res.redirect('back');
+
+
+})
+
 //for listening on port if error display on console
 app.listen( port , function(err){
     if(err){
